@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Elections | Home</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/loader.css">
+</head>
+
+<body>
+	<div id="nav"></div>
+	<div class="container" style="text-align: center;">
+		<br>
+		<div class="row">
+			<div class="col-4">
+				<h4>
+					Total Votes: <span style="color: green;" th:text="${votes}"></span>
+				</h4>
+			</div>
+			<div class="col-5">
+				<h4>
+					Vote from IP: <span th:text="${ip}"></span>
+				</h4>
+			</div>
+			<div class="col-3">
+				<button class="btn btn-primary" id="votebtn" onclick="vote();">
+					Vote <i class="fas fa-plus"></i>
+				</button>
+			</div>
+		</div>
+		<hr>
+		<div>
+			<br>
+			<h1>Candidate details:</h1>
+			<hr>
+		</div>
+		<div>
+			<h3 style="color:grey;">
+			Name: <span th:text="${User.name}"></span>
+			</h3>
+			<h3 style="color:grey;">
+			No. of Challenges : <span th:text="${User.challengeCount}"></span>
+			</h3>
+			<h3 style="color:grey;">
+			Expertise Level: <span th:text="${User.totalExpertise}"></span>
+			</h3>
+			<h3 style="color:grey;">
+			Expertise in: <span th:text="${User.subjects}"></span>
+			</h3>
+
+		</div>
+	</div>
+	<script th:inline="javascript">
+		/*<![CDATA[*/
+
+		var name = /*[[${User.name}]]*/'Name';
+		var disable = /*[[${disable}]]*/'disable';
+
+		/*]]>*/
+	</script>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<script src="/js/loader.js"></script>
+
+	<script type="text/javascript"
+		src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+	<script type="text/javascript"
+		src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+
+	<script src="/js/candidate.js"></script>
+	<script src="/js/home.js"></script>
+
+</body>
+
+</html>
