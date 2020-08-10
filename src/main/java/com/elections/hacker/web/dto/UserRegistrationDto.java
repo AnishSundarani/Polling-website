@@ -28,6 +28,21 @@ public class UserRegistrationDto {
 		this.confirmPassword = confirmPassword;
 		this.isAdmin = isAdmin;
 	}
+    
+    
+
+	public UserRegistrationDto(@NotEmpty String name, int challengeCount, @NotEmpty String password,
+			@NotEmpty String confirmPassword, int totalExpertise, boolean isAdmin) {
+		super();
+		this.name = name;
+		this.challengeCount = challengeCount;
+		this.password = password;
+		this.confirmPassword = confirmPassword;
+		this.totalExpertise = totalExpertise;
+		this.isAdmin = isAdmin;
+	}
+
+
 
 	public boolean isAdmin() {
 		return isAdmin;
